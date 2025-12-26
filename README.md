@@ -1,3 +1,4 @@
+🔗Project Live Link:https://chat-app-front-zeta.vercel.app/login
 # 🤖 AI-Powered Real-Time Chat Application
 
 A modern, full-stack chat application built with the MERN stack, featuring real-time messaging, image sharing, and smart **AI-powered event detection** using Google Gemini.
