@@ -10,6 +10,9 @@ export const signup = async (req, res) => {
     if (!fullName || !email || !password || !bio) {
       return res.status(400).json({ success: false, message: "Missing details" });
     }
+    if (password.length < 6) {
+      return res.status(400).json({ success: false, message: "Password must be at least 6 characters" });
+    }
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(409).json({ success: false, message: "User already exists" });
@@ -74,10 +77,10 @@ export const checkAuth = (req, res) => {
 export const updateProfile = async (req, res) => {
 
   const { profilePic, bio, fullName } = req.body;
-  
+
   const userId = req.user._id;
   console.log(userId);
-  
+
 
   try {
     const updateFields = { bio, fullName };
